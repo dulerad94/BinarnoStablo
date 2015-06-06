@@ -41,7 +41,7 @@ public class BinarnoStablo {
 			System.out.println("Ne nalazi se u stablu");
 			return;
 		}
-		if (cvor.getDesni() == null || cvor.getLevi() == null) {
+		if (!punList(cvor)) {
 			CvorBinarnogStabla roditelj = pronadjiRoditelja(cvor, koren);
 			if (cvor.getKljuc() > roditelj.getKljuc()) {
 				roditelj.setDesni((cvor.getDesni() == null ? cvor.getLevi()
