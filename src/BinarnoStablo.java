@@ -173,8 +173,6 @@ public class BinarnoStablo {
 
 	private void rotirajUdesno(CvorBinarnogStabla k1, CvorBinarnogStabla k2) {
 		CvorBinarnogStabla roditelj = pronadjiRoditelja(k1, koren);
-		CvorBinarnogStabla pom = k1;
-		CvorBinarnogStabla desni = k2.getDesni();
 		if (roditelj != null && roditelj.getDesni() == k1) {
 			roditelj.setDesni(k2);
 		} else if (roditelj != null && roditelj.getLevi() == k1) {
@@ -182,19 +180,14 @@ public class BinarnoStablo {
 		}else{
 			koren=k2;
 		}
-		if (!punList(k2)) {
-			k2.setDesni(pom);
-			pom.setLevi(null);
-		} else {
-			k2.setDesni(pom);
-			pom.setLevi(desni);
-		}
+			k1.setLevi(k2.getDesni());
+			k2.setDesni(k1);
+			
+		
 	}
 
 	private void rotirajUlevo(CvorBinarnogStabla k1, CvorBinarnogStabla k2) {
 		CvorBinarnogStabla roditelj = pronadjiRoditelja(k1, koren);
-		CvorBinarnogStabla pom = k1;
-		CvorBinarnogStabla levi = k2.getLevi();
 		if (roditelj != null && roditelj.getDesni() == k1) {
 			roditelj.setDesni(k2);
 		} else if (roditelj != null && roditelj.getLevi() == k1) {
@@ -202,13 +195,8 @@ public class BinarnoStablo {
 		}else {
 			koren=k2;
 		}
-		if (!punList(k2)) {
-			k2.setLevi(pom);
-			pom.setDesni(null);
-		} else {
-			k2.setLevi(pom);
-			pom.setDesni(levi);
-		}
+			k1.setDesni(k2.getLevi());
+			k2.setLevi(k1);		
 	}
 
 	private boolean punList(CvorBinarnogStabla k) {

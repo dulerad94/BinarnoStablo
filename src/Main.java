@@ -11,9 +11,9 @@ public class Main {
 		stablo.ubaci("Z");
 		stablo.ubaci("K");
 		stablo.ubaci("H");
-		stablo.izbaci("Z");
-		stablo.izbaci("K");
-		stablo.izbaci("H");
+//		stablo.izbaci("Z");
+//		stablo.izbaci("K");
+//		stablo.izbaci("H");
 		stablo.prefix(stablo.getKoren());
 		System.out.println();
 		stablo.infix(stablo.getKoren());
